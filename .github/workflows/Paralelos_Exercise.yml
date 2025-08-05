@@ -1,4 +1,4 @@
-name: Operaciones matemáticas básicas
+name: Operaciones matematicas basicas
 
 on:
   push:
@@ -8,11 +8,11 @@ on:
   workflow_dispatch:
     inputs:
       numero1:
-        description: 'Primer número'
+        description: 'Primer numero'
         required: true
         default: '10'
       numero2:
-        description: 'Segundo número'
+        description: 'Segundo numero'
         required: true
         default: '5'
 
@@ -23,10 +23,10 @@ jobs:
         operation: [suma, resta, multiplicacion, division]
     runs-on: ubuntu-latest
     steps:
-      - name: Realizar operación
+      - name: Realizar operacion
         run: |
-          n1=${{ github.event.inputs.numero1 }}
-          n2=${{ github.event.inputs.numero2 }}
+          n1=7
+          n2=2
           case ${{ matrix.operation }} in
             suma)
               echo "Suma: $((n1 + n2))"
@@ -35,11 +35,11 @@ jobs:
               echo "Resta: $((n1 - n2))"
               ;;
             multiplicacion)
-              echo "Multiplicación: $((n1 * n2))"
+              echo "Multiplicacion: $((n1 * n2))"
               ;;
             division)
               if [ "$n2" -ne 0 ]; then
-                echo "División: $((n1 / n2))"
+                echo "Division: $((n1 / n2))"
               else
                 echo "No se puede dividir por cero"
               fi
