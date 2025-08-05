@@ -1,6 +1,10 @@
 name: Operaciones matemáticas básicas
 
 on:
+  push:
+    branches:
+      - main
+      - feature/*
   workflow_dispatch:
     inputs:
       numero1:
